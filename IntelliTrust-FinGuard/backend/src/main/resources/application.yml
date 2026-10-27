@@ -1,0 +1,42 @@
+server:
+  port: ${SERVER_PORT:8080}
+
+spring:
+  application:
+    name: intellitrust-finguard
+  datasource:
+    url: ${DB_URL:jdbc:postgresql://localhost:5432/intellitrust_finguard}
+    username: ${DB_USER:finguard_app}
+    password: ${DB_PASSWORD:finguard_app_pw}
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+    properties:
+      hibernate:
+        format_sql: true
+        jdbc:
+          time_zone: UTC
+    open-in-view: false
+
+app:
+  jwt:
+    secret: ${JWT_SECRET:c2VjdXJlLWRldi1vbmx5LWp3dC1zaWduaW5nLWtleS1jaGFuZ2UtaW4tcHJvZHVjdGlvbi1pbnRlbGxpdHJ1c3Q=}
+    expiration-ms: ${JWT_EXPIRATION_MS:43200000}
+  cors:
+    allowed-origins: ${CORS_ALLOWED_ORIGINS:http://localhost:5173}
+  demo:
+    seed-on-startup: ${DEMO_SEED_ON_STARTUP:true}
+
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+    persistAuthorization: true
+  api-docs:
+    path: /v3/api-docs
+
+logging:
+  level:
+    root: INFO
+    com.finguard: INFO

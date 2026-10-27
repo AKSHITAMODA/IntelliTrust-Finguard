@@ -1,0 +1,17 @@
+spring:
+  datasource:
+    url: jdbc:h2:mem:finguard_test;MODE=PostgreSQL;DB_CLOSE_DELAY=-1
+    username: sa
+    password: ""
+    driver-class-name: org.h2.Driver
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: false
+
+app:
+  jwt:
+    secret: dGVzdC1vbmx5LWp3dC1zaWduaW5nLWtleS1mb3ItdW5pdC10ZXN0cy1kby1ub3QtdXNl
+    expiration-ms: 43200000
+  demo:
+    seed-on-startup: false

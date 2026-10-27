@@ -1,0 +1,33 @@
+backend/target/
+backend/run.log
+frontend/node_modules/
+frontend/dist/
+frontend/dev.log
+tools/
+*.log
+.env
+
+# Environment variables and secrets
+.env
+.env.*
+!.env.example
+application-local.properties
+application-secrets.properties
+
+# Dependencies and generated files
+node_modules/
+dist/
+build/
+target/
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Logs and local IDE files
+*.log
+.idea/
+.vscode/
+
+# Compiled executables
+*.exe
